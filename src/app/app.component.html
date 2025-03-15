@@ -227,6 +227,12 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+      <!-- bắt sự kiện (click/hover) -->
+      <p (mouseover)="countClick()">Count: {{ count }}</p>
+      <button (click)="countClick()">Click</button>
+      <!-- làm việc với form/input -->
+      <label for="">Tên tôi là {{ name }}</label>
+      <input type="text" [(ngModel)]="name" id="">
       <table class="table">
         <thead>
           <tr>
@@ -235,18 +241,25 @@
             <th>Ngành</th>
             <th>Ảnh</th>
             <th>Năm sinh</th>
+            <th>Điểm thi</th>
+            <th>Kết quả</th>
           </tr>
         </thead>
         <tbody>
-          @for (s of listStudents; track s.maSv) {
-            <tr>
+          <!-- @for (s of listStudents; track s.maSv) { -->
+            <tr *ngFor="let s of listStudents">
               <td>{{ s.maSv }}</td>
               <td>{{ s.ten }}</td>
               <td>{{ s.nganh }}</td>
               <td><img src="{{s.anh}}" alt=""></td>
               <td>{{ s.namSinh }}</td>
+              <td>{{ s.thi }}</td>
+              <td>
+                <span *ngIf="s.thi < 5">Trượt</span>
+                <span *ngIf="s.thi >= 5">Qua</span>
+              </td>
             </tr>
-          }
+          <!-- } -->
         </tbody>
       </table>
     </div>
