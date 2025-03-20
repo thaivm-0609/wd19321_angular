@@ -1,0 +1,13 @@
+{
+  "students": [
+    {
+      "id": 3,
+      "maSv": "PH123467",
+      "ten": "thaivm4",
+      "nganh": "Design",
+      "anh": "https://picsum.photos/200",
+      "namSinh": 1900,
+      "thi": 8
+    }
+  ]
+}

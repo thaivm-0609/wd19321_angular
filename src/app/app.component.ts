@@ -19,30 +19,30 @@ export class AppComponent {
   name:string = '';
 
   title = 'thaivm2';
-  listStudents = [
-    {
-      maSv: 'PH123456',
-      ten: 'thaivm2',
-      nganh: 'Web',
-      anh: 'https://picsum.photos/200',
-      namSinh: 1900,
-      thi: 3
-    },
-    {
-      maSv: 'PH123467',
-      ten: 'thaivm3',
-      nganh: 'Marketing',
-      anh: 'https://picsum.photos/200',
-      namSinh: 1901,
-      thi: 5,
-    },
-    {
-      maSv: 'PH123478',
-      ten: 'thaivm4',
-      nganh: 'Design',
-      anh: 'https://picsum.photos/200',
-      namSinh: 1902,
-      thi: 10
-    }
-  ]
+  // listStudents = [
+  //   {
+  //     maSv: 'PH123456',
+  //     ten: 'thaivm2',
+  //     nganh: 'Web',
+  //     anh: 'https://picsum.photos/200',
+  //     namSinh: 1900,
+  //     thi: 3
+  //   },
+  //   {
+  //     maSv: 'PH123467',
+  //     ten: 'thaivm3',
+  //     nganh: 'Marketing',
+  //     anh: 'https://picsum.photos/200',
+  //     namSinh: 1901,
+  //     thi: 5,
+  //   },
+  //   {
+  //     maSv: 'PH123478',
+  //     ten: 'thaivm4',
+  //     nganh: 'Design',
+  //     anh: 'https://picsum.photos/200',
+  //     namSinh: 1902,
+  //     thi: 10
+  //   }
+  // ]
 }

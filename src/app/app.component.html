@@ -234,7 +234,7 @@
       <label for="">Tên tôi là {{ name }}</label>
       <input type="text" [(ngModel)]="name" id="">
       <router-outlet />
-      <table class="table">
+      <!-- <table class="table">
         <thead>
           <tr>
             <th>Mã SV</th>
@@ -247,7 +247,7 @@
           </tr>
         </thead>
         <tbody>
-          <!-- @for (s of listStudents; track s.maSv) { -->
+          @for (s of listStudents; track s.maSv) {
             <tr *ngFor="let s of listStudents">
               <td>{{ s.maSv }}</td>
               <td>{{ s.ten }}</td>
@@ -260,9 +260,9 @@
                 <span *ngIf="s.thi >= 5">Qua</span>
               </td>
             </tr>
-          <!-- } -->
+          }
         </tbody>
-      </table>
+      </table> -->
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
