@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './list.component.css'
 })
 export class ListComponent {
-  constructor(private client:HttpClient) {}
+  constructor(private client:HttpClient) {} //khởi tạo các class cần thiết cho component
 
   ngOnInit():void { //gọi hàm ngay khi component được tải (tương tự useEffect)
     this.getListStudents();
@@ -16,6 +16,7 @@ export class ListComponent {
 
   apiUrl:string = 'http://localhost:3000/students'; //khai báo api URL
   listStudents:any;
+  
   getListStudents():void{ //call api để lấy danh sách từ json-server
     //cú pháp: this.client.method(apiUrl).subscribe(response => {})
     this.client.get(this.apiUrl).subscribe(response => {
