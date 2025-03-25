@@ -23,7 +23,7 @@
                     <td>{{ s.namSinh }}</td>
                     <td>{{ s.thi }}</td>
                     <td>
-                        <button class="btn btn-warning">Edit</button>
+                        <button [routerLink]="['/edit',s.id]" class="btn btn-warning">Edit</button>
                         <button (click)="onDelete(s.id)" class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
