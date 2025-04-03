@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,14 +13,16 @@ import { Observable } from 'rxjs';
 })
 export class LoginComponent {
   constructor(
-    private api:HttpClient,
+    // private api:HttpClient,
+    private auth:AuthService,
     private router:Router
   ) {}
 
-  apiUrl:string='http://localhost:3000/login';
+  // apiUrl:string='http://localhost:3000/login';
   
   onLogin(data:any):void {
-    this.api.post<any>(this.apiUrl,data).subscribe(res => {
+    // this.api.post<any>(this.apiUrl,data).subscribe(res => {
+    this.auth.login(data).subscribe(res => {
       const token = res?.accessToken;
       localStorage.setItem('token', token); //lưu accessToken vào localStorage
       alert('Đăng nhập thành công');
