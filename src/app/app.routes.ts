@@ -5,6 +5,9 @@ import { EditComponent } from './edit/edit.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { authGuard } from './guards/auth.guard';
+import path from 'path';
+import { adminGuard } from './guards/admin.guard';
 
 //PATH KHÔNG ĐƯỢC BẮT ĐẦU BẰNG DẤU /(slash)
 export const routes: Routes = [
@@ -14,7 +17,9 @@ export const routes: Routes = [
     },
     {
         path: 'create',
-        component: CreateComponent
+        component: CreateComponent,
+        //cú pháp khai báo guard guardType: [guardName]
+        canActivate: [authGuard]
     },
     { //truyền params qua url /:tenParam
         path: 'edit/:id',
@@ -27,6 +32,25 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'admin',
+        canActivateChild: [adminGuard],
+        children: [
+            {
+                path: 'students',
+                children: [
+                    {
+                        path: '',
+                        component: ListComponent
+                    },
+                    {
+                        path: 'create',
+                        component: CreateComponent
+                    }
+                ]
+            },
+        ]
     },
     { //luôn nằm cuối cùng ở trong route
         path: '**',

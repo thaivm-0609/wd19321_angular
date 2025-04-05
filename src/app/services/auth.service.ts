@@ -17,6 +17,6 @@ export class AuthService {
 
   //khai báo hàm đăng nhập
   login(data:any): Observable<any> {
-    return this.api.post(`${this.api}/login`, data);
+    return this.api.post(`${this.apiUrl}/login`, data);
   }
 }
